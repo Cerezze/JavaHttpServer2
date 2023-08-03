@@ -9,12 +9,12 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 3000), 0);
+        HttpServer server = HttpServer.create(new InetSocketAddress("localhost", 8080), 0);
         ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
 
         server.createContext("/test", new MyHttpHandler());
         server.setExecutor(threadPoolExecutor);
         server.start();
-        System.out.println("Server started on port 3000");
+        System.out.println("Server started on port 8080");
     }
 }
