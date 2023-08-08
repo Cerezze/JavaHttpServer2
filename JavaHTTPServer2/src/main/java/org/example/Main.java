@@ -16,5 +16,8 @@ public class Main {
         server.setExecutor(threadPoolExecutor);
         server.start();
         System.out.println("Server started on port 8080");
+        Employee e = new Employee();
+
+        e.test1();
     }
 }
